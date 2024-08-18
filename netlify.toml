@@ -1,5 +1,6 @@
 [build]
   publish = "src"  # O la carpeta donde se encuentran tus archivos estáticos
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/register"

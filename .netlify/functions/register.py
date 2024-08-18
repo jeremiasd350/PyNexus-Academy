@@ -9,14 +9,13 @@ cred = credentials.Certificate('pynexus-academy-d0ea4-firebase-adminsdk-zd8zx-8e
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-@app.route('https://pynexuzacademy.netlify.app/.netlify/functions/register', methods=['POST'])
+@app.route('/.netlify/functions/register', methods=['POST'])
 def register():
     data = request.json
     email = data.get('email')
     password = data.get('password')
 
     if email and password:
-        # Guardar en Firestore
         db.collection('usuarios').add({
             'email': email,
             'password': password  # Guarda la contraseña, aunque en un entorno real esto no es recomendado

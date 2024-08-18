@@ -112,9 +112,9 @@
     <main>
         <div class="form-container">
             <h2>Crear una nueva cuenta</h2>
-            <form action="https://pynexuzacademy.netlify.app/.netlify/functions/register" method="post">
-                <input type="email" name="email" placeholder="Correo Electrónico" required>
-                <input type="password" name="password" placeholder="Contraseña" required>
+            <form id="registroForm">
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
                 <button type="submit" id="registrarse">Registrarse</button>
             </form>
             <a href="iniciar-sesion.html">¡Ya tengo una cuenta!</a>
@@ -136,12 +136,10 @@
         document.getElementById('registroForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            // Obtener valores del formulario
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Enviar datos al backend
-            fetch('https://pynexuzacademy.netlify.app/.netlify/functions/register', {  // Cambia esta URL por la de tu servidor
+            fetch('https://pynexuzacademy.netlify.app/.netlify/functions/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
