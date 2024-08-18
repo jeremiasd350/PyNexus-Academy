@@ -76,11 +76,6 @@ nav ul li {
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
     transition: 100ms;
-    transform: translateY(10px);
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
 }
 
 .container-1 {
@@ -96,7 +91,9 @@ nav ul li {
 }
 
 .div-eslogan h3 {
-    line-height: 30px;
+    line-height: 35px;
+    font-weight: 200;
+    font-size: 20px;
 }
 
 .Logo-py {
@@ -105,10 +102,12 @@ nav ul li {
 }
 
 .btn {
+    background-color: #5d18dc;
+
     padding: 17px 40px;
     cursor: pointer;
     border: 0;
-    color: black;
+    color: white;
     box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -122,9 +121,10 @@ nav ul li {
 }
 
 .btn:hover {
+    background-color: #7a3ff0;
     background-color: #5d18dc;
     color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    box-shadow: rgb(93 24 220) 0px 0px 30px 10px;
 }
 
 .btn:active {
@@ -132,7 +132,11 @@ nav ul li {
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
     transform: translateY(10px);
-    transition: 100ms;
+    transition: 100ms ease-out;
+    -webkit-transition: 100ms ease-out;
+    -moz-transition: 100ms ease-out;
+    -ms-transition: 100ms ease-out;
+    -o-transition: 100ms ease-out;
 }
 
 
@@ -142,6 +146,7 @@ nav ul li {
     justify-content: space-around;
     align-items: center;
     min-height: 500px;
+    margin-bottom: 100px;
 }
 
 .container-3 {
@@ -149,10 +154,13 @@ nav ul li {
     justify-content: center;
     align-items: start;
     min-height: 500px;
+    padding: 25px;
 }
 
-.container-3  div ul li {
-    line-height: 50px;
+.container-3 div ul li {
+    line-height: 45px;
+    font-weight: 200;
+    font-size: 19px;
 }
 
 .hr {
@@ -172,9 +180,11 @@ nav ul li {
 
 .div-razones div {
     width: 30%;
-    line-height: 1.5rem;
     padding: 10px;
     text-align: center;
+    line-height: 35px;
+    font-weight: 200;
+    font-size: 20px;
 }
 
 .div-razones div img {
@@ -231,6 +241,5 @@ footer div a {
     background-color: hsl(261deg 80% 48%);
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(10px);
     transition: 100ms;
 }

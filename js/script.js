@@ -55,7 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
   ratingValue.textContent = `Valoración: ${savedRating} estrellas`;
 });
 
-// const header = document.getElementsByClassName("header");
-// const footer = document.getElementsByClassName("footer");
+const header = document.getElementById("header");
+const nav_iniciar = document.getElementById("nav-iniciar");
+const nav_registrar = document.getElementById("nav-registrar");
+// const btn_pepe = document.getElementById("btn-pepe");
 
-// header.style.display = "none";
+// header.style.backgroundColor = "black";
+// header.style.backgroundColor = "#0D0D1E";
+
+// if (header.style.backgroundColor === "#0D0D1E") {
+//   nav_iniciar.style.display = "block";
+//   nav_registrar.style.display = "none";
+// } else if (header.style.backgroundColor === "black") {
+//   nav_iniciar.style.display = "none";
+//   nav_registrar.style.display = "block";
+// } else {
+//   console.log = "puta madre";
+// }
