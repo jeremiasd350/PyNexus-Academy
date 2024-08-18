@@ -141,7 +141,7 @@
             const password = document.getElementById('password').value;
 
             // Enviar datos al backend
-            fetch('https://pynexuzacademy.netlify.app/register', {  // Cambia esta URL por la de tu servidor
+            fetch('https://pynexuzacademy.netlify.app/.netlify/funcions/register', {  // Cambia esta URL por la de tu servidor
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -157,7 +157,7 @@
                 });
         });
     </script>
-    <script src="js/script.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>
