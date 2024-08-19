@@ -1,0 +1,213 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    background: #0D0D1E;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    padding: 10px;
+    color: white;
+    box-shadow: 1px 1px 20px -15px white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    /* margin-bottom: 50px; */
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+.button {
+    padding: 17px 40px;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.button:hover {
+    background-color: #5d18dc;
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.button:active {
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e2f;
+    padding: 50px; /* Aumenta el padding */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px; /* Aumenta el tamaño máximo del formulario */
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    margin-bottom: 40px; /* Aumenta el espacio inferior */
+    text-align: center;
+    color: #5d18dc;
+    font-size: 28px; /* Aumenta el tamaño de la fuente */
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container button {
+    width: 100%;
+    padding: 20px; /* Aumenta el padding */
+    margin: 15px 0; /* Aumenta el margen */
+    border-radius: 5px;
+    border: none;
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    box-sizing: border-box;
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    background-color: #2A2A3C;
+    color: #FFFFFF;
+    border: 1px solid #444455;
+}
+
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+    outline: none;
+    border-color: #5d18dc;
+}
+
+.form-container button {
+    background-color: #5d18dc;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #4a14b3;
+}
+
+.form-container a {
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
+    color: white;
+    box-shadow: 1px 1px 20px -15px white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    /* margin-top: 100px; */
+}
+
+footer div {
+    display: flex;
+    gap: 25px;
+}
+
+footer div a {
+    text-decoration: none;
+}
+
+.buttonf {
+    padding: 17px 40px;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all 0.5s ease;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.buttonf:hover {
+    background-color: #5d18dc;
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.buttonf:active {
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transition: 100ms;
+}

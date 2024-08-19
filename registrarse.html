@@ -76,8 +76,8 @@
     <link rel="preload" href="https://www.tusitio.com/estilos.css" as="style">
     <link rel="preload" href="https://www.tusitio.com/scripts.js" as="script">
 
-    <link rel="stylesheet" href="../css/slider3.css">
-    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/registrarse.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,93 +89,96 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="../index.html">
+    <header class="header" id="header">
+        <a href="index.html">
             <h2>PyNexus Academy</h2>
         </a>
-        <nav>
+        <nav id="nav-registrar">
             <ul>
-                <li><a class="button" href="../cursos.html">Cursos</a></li>
-                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
-                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
         </nav>
 
-        <!-- <nav>
+        <!-- <nav id="nav-iniciar">
             <ul>
                 <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href=""></a></li>
+                <li><a href="" class="button">Perfil</a></li>
             </ul>
         </nav> -->
     </header>
 
     <main>
-        <div class="div-h1">
-            <h1>Productos</h1>
-            <div>
-                <button class="btn">
-                    INSCRÍBETE AQUÍ
-                </button>
-            </div>
+        <div class="form-container">
+            <h2>Crear una nueva cuenta</h2>
+            <form id="registroForm" action="#" method="post">
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit" id="registrarse">Registrarse</button>
+            </form>
+            <a href="iniciar-sesion.html">¡Ya tengo una cuenta!</a>
         </div>
-
-        <section>
-            <article>
-                <a href="#">
-                    <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
-                    <div class="div-info-prod">
-                        <div>
-                            <h3>Ultimate Linux</h3>
-                            <p>Al finalizar el curso, entenderás los fundamentos de bases de datos no relacionales y
-                                cómo utilizarlas en tus proyectos. Aprenderás sobre...</p>
-                        </div>
-                        <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="#">
-                    <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
-                    <div class="div-info-prod">
-                        <div>
-                            <h3>Seguridad en Aplicaciones Web</h3>
-                            <p>Si eres un desarrollador web y quieres mejorar tus oportunidades laborales, aprender
-                                Seguridad en Aplicaciones Web es fundamental...</p>
-                        </div>
-                        <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </section>
     </main>
-    <div class="div-slider">
-        <nav>
-            <ul>
-                <li><a id="slider-a" href="../slider/slider2.html"><</a></li>
-                <li><a id="slider-1" href="../cursos.html">1</a></li>
-                <li><a id="slider-2" href="../slider/slider2.html">2</a></li>
-                <li><a id="slider-3" href="../slider/slider3.html">3</a></li>
-                <li><a id="slider-d">></a></li>
-            </ul>
-        </nav>
-    </div>
 
-    <footer id="footer">
+    <footer>
         <div>
             <p>&copy; Copyright PyNexus Academy 2024</p>
         </div>
         <div>
-            <a class="buttonf" href="../index.html">Inicio</a>
-            <a class="buttonf" href="../cursos.html">Todos los cursos</a>
-            <a class="buttonf" href="../politicas-de-uso.html">Políticas de uso</a>
+            <a class="buttonf" href="index.html">Inicio</a>
+            <a class="buttonf" href="cursos.html">Todos los cursos</a>
+            <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Manejar el registro
+        document.getElementById('registroForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Guardar datos del usuario en Firestore
+                await setDoc(doc(db, 'users', user.uid), {
+                    email: email,
+                    createdAt: new Date()
+                });
+
+                alert('Registro exitoso. Redirigiendo a iniciar sesión...');
+                window.location.href = 'iniciar-sesion.html';
+
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>

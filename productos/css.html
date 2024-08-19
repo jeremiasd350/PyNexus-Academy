@@ -76,8 +76,8 @@
     <link rel="preload" href="https://www.tusitio.com/estilos.css" as="style">
     <link rel="preload" href="https://www.tusitio.com/scripts.js" as="script">
 
-    <link rel="stylesheet" href="../css/slider3.css">
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/productos.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,11 +89,11 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <a href="../index.html">
             <h2>PyNexus Academy</h2>
         </a>
-        <nav>
+        <nav id="nav-registrar">
             <ul>
                 <li><a class="button" href="../cursos.html">Cursos</a></li>
                 <li><a class="button" href="../registrarse.html">Registrarse</a></li>
@@ -101,70 +101,35 @@
             </ul>
         </nav>
 
-        <!-- <nav>
+        <!-- <nav id="nav-iniciar">
             <ul>
                 <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href=""></a></li>
+                <li><a href="" class="button">Perfil</a></li>
             </ul>
         </nav> -->
     </header>
 
     <main>
-        <div class="div-h1">
-            <h1>Productos</h1>
+
+        <section class="sec1">
             <div>
-                <button class="btn">
-                    INSCRÍBETE AQUÍ
-                </button>
+                <h2>Ultimate JavaScript</h2>
+                <p>JavaScript es uno de los lenguajes más populares en la actualidad y es utilizado por miles de
+                    empresas. Si quieres construir aplicaciones móviles o web, javascript es el lenguaje que debes
+                    aprender.</p>
             </div>
-        </div>
-
-        <section>
-            <article>
-                <a href="#">
-                    <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
-                    <div class="div-info-prod">
-                        <div>
-                            <h3>Ultimate Linux</h3>
-                            <p>Al finalizar el curso, entenderás los fundamentos de bases de datos no relacionales y
-                                cómo utilizarlas en tus proyectos. Aprenderás sobre...</p>
-                        </div>
-                        <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="#">
-                    <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
-                    <div class="div-info-prod">
-                        <div>
-                            <h3>Seguridad en Aplicaciones Web</h3>
-                            <p>Si eres un desarrollador web y quieres mejorar tus oportunidades laborales, aprender
-                                Seguridad en Aplicaciones Web es fundamental...</p>
-                        </div>
-                        <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
-                        </div>
-                    </div>
-                </a>
-            </article>
         </section>
-    </main>
-    <div class="div-slider">
-        <nav>
-            <ul>
-                <li><a id="slider-a" href="../slider/slider2.html"><</a></li>
-                <li><a id="slider-1" href="../cursos.html">1</a></li>
-                <li><a id="slider-2" href="../slider/slider2.html">2</a></li>
-                <li><a id="slider-3" href="../slider/slider3.html">3</a></li>
-                <li><a id="slider-d">></a></li>
-            </ul>
-        </nav>
-    </div>
+        <hr class="hr">
+        <!-- Segunda sección -->
+        <section class="sec2">
+            <a href="https://www.um.es/docencia/barzana/DAWEB/Lenguaje-de-programacion-JavaScript-1.pdf"
+                class="btn">Descargar PDF</a>
+        </section>
 
-    <footer id="footer">
+    </main>
+
+
+    <footer>
         <div>
             <p>&copy; Copyright PyNexus Academy 2024</p>
         </div>
@@ -175,7 +140,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

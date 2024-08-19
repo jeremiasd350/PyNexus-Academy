@@ -1,9 +1,0 @@
-[build]
-  publish = "src"  # La carpeta donde están los archivos estáticos (HTML, CSS, JS)
-  functions = ".netlify/functions"  # La carpeta donde están tus funciones serverless
-
-[[redirects]]
-  from = "/register"
-  to = "/.netlify/functions/register"
-  status = 200
-  force = true
