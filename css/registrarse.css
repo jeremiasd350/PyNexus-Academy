@@ -105,11 +105,17 @@ body {
     }
 
     #nav-registrar {
-        display: none;
+        display: none !important;
     }
 
     #div-menu {
         display: block;
+    }
+}
+
+@media screen and (max-width:425px) {
+    header a h2 {
+        font-size: 25px;
     }
 }
 

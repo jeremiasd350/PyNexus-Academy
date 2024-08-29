@@ -29,6 +29,7 @@ body {
     color: white;
 }
 
+
 h2 {
     font-size: 35px;
 }
@@ -142,6 +143,12 @@ nav ul li {
     }
 }
 
+@media screen and (max-width:425px) {
+    header a h2 {
+        font-size: 25px;
+    }
+}
+
 .button {
     padding: 17px 40px;
     cursor: pointer;
@@ -222,6 +229,7 @@ nav ul li {
     background-color: #5d18dc;
     text-decoration: none;
     padding: 17px 40px;
+    width: 150px;
     cursor: pointer;
     border: 0;
     color: white;
@@ -235,6 +243,7 @@ nav ul li {
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+    margin-bottom: 50px;
 }
 
 .btn:hover {
@@ -387,6 +396,29 @@ footer div a {
     transition: 100ms;
 }
 
+
+@media screen and (max-width:1024px) {
+    footer {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 200px;
+    }
+
+    footer div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header nav ul li a {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+
 @media screen and (max-width:768px) {
     .container-2 p {
         text-align: left;
@@ -439,33 +471,10 @@ footer div a {
     }
 
     #nav-registrar {
-        display: none;
+        display: none !important;
     }
 
     #div-menu {
         display: block;
     }
 }
-
-
-@media screen and (max-width:1024px) {
-    footer {
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        min-height: 200px;
-    }
-
-    footer div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .header nav ul li a {
-        padding: 10px;
-        font-size: 13px;
-    }
-}
-

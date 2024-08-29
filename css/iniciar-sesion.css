@@ -101,7 +101,7 @@ body {
     }
 
     #nav-registrar {
-        display: none;
+        display: none !important;
     }
 
     #div-menu {
@@ -109,6 +109,11 @@ body {
     }
 }
 
+@media screen and (max-width:425px) {
+    header a h2 {
+        font-size: 25px;
+    }
+}
 
 .header a {
     text-decoration: none;
