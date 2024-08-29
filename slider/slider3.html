@@ -89,11 +89,11 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <a href="../index.html">
             <h2>PyNexus Academy</h2>
         </a>
-        <nav>
+        <nav id="nav-registrar">
             <ul>
                 <li><a class="button" href="../cursos.html">Cursos</a></li>
                 <li><a class="button" href="../registrarse.html">Registrarse</a></li>
@@ -101,51 +101,57 @@
             </ul>
         </nav>
 
-        <!-- <nav>
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href=""></a></li>
+                <li><a class=" button" href="../cursos.html">Cursos</a></li>
+                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="../asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="../asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
 
     <main>
         <div class="div-h1">
             <h1>Productos</h1>
             <div>
-                <button class="btn">
+                <a href="../inscribete.html" class="btn">
                     INSCRÍBETE AQUÍ
-                </button>
+                </a>
             </div>
         </div>
 
         <section>
             <article>
-                <a href="#">
+                <a href="#" id="linux" >
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate Linux</h3>
-                            <p>Al finalizar el curso, entenderás los fundamentos de bases de datos no relacionales y
-                                cómo utilizarlas en tus proyectos. Aprenderás sobre...</p>
+                            <p>Linux es un sistema operativo robusto y flexible, perfecto para desarrolladores y administradores de sistemas. Ofrece un entorno seguro, estable y...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="linux-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="seguridad" >
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Seguridad en Aplicaciones Web</h3>
-                            <p>Si eres un desarrollador web y quieres mejorar tus oportunidades laborales, aprender
-                                Seguridad en Aplicaciones Web es fundamental...</p>
+                            <p>La seguridad en aplicaciones web es crucial para proteger tus datos y la privacidad de tus usuarios. Implementar prácticas como...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="seguridad-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
@@ -155,7 +161,9 @@
     <div class="div-slider">
         <nav>
             <ul>
-                <li><a id="slider-a" href="../slider/slider2.html"><</a></li>
+                <li><a id="slider-a" href="../slider/slider2.html">
+                        < </a>
+                </li>
                 <li><a id="slider-1" href="../cursos.html">1</a></li>
                 <li><a id="slider-2" href="../slider/slider2.html">2</a></li>
                 <li><a id="slider-3" href="../slider/slider3.html">3</a></li>
@@ -166,16 +174,58 @@
 
     <footer id="footer">
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
-        </div>
-        <div>
             <a class="buttonf" href="../index.html">Inicio</a>
             <a class="buttonf" href="../cursos.html">Todos los cursos</a>
             <a class="buttonf" href="../politicas-de-uso.html">Políticas de uso</a>
         </div>
+        <div>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z",
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Verificar el estado de autenticación
+        onAuthStateChanged(auth, (user) => {
+            const navRegistrar = document.getElementById("nav-registrar");
+            const  navIniciar = document.getElementById("nav-iniciar");
+
+            if (navRegistrar) {
+                if (user) {
+                    // Usuario está autenticado, ocultar el elemento
+                    navRegistrar.style.display = "none";
+                    navIniciar.style.display = "block";
+
+                } else {
+                    // Usuario no está autenticado, mostrar el elemento
+                    navRegistrar.style.display = "block";
+                }
+            }
+        });
+
+    </script>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -76,8 +76,10 @@
     <link rel="preload" href="https://www.tusitio.com/estilos.css" as="style">
     <link rel="preload" href="https://www.tusitio.com/scripts.js" as="script">
 
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="asset/img/Colorful Modern Infinity Creative Studio Logo (2).png"
+        type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,12 +103,20 @@
             </ul>
         </nav>
 
-        <!-- <nav id="nav-iniciar">
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href="" class="button">Perfil</a></li>
+                <li><a class=" button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
 
     <main>
@@ -116,13 +126,14 @@
                 <h3>Con nuestro equipo de expertos en desarrollo web
                     aprenderás a programar de manera sencilla y efectiva. Domina habilidades clave y potencia tu
                     carrera. ¡Comienza ahora!</h3>
-                <a href="inscribete.html" style="text-decoration: none;" class="btn" id="btn-inscripcion">
+                <a href="inscribete.html" class="btn" id="btn-inscripcion">
                     INSCRÍBETE AQUÍ
                 </a>
             </div>
 
             <div class="div-logo-py">
-                <img class="Logo-py" src="asset/img/python-logo-png-open-2000.png"
+                <img class="Logo-py"
+                    src="asset/img/Colorful_Modern_Infinity_Creative_Studio_Logo__1_-removebg-preview.png"
                     alt="Logotipo Del Lenguaje De Programacion Python">
             </div>
         </section>
@@ -134,27 +145,44 @@
                 <h2>Por qué PyNexus Academy?</h2>
             </div>
             <div class="div-razones">
-                <div>
+                <div class="div-razones2">
                     <img src="asset/icon/multiple-users-silhouette.png" alt="Icono de reloj">
-                    <p>Somos un equipo de desarrolladores expertos en desarrollo web. Nuestro programa completo te
-                        enseñarán habilidades prácticas y
-                        demandadas
-                        en esta área. Aprovecha nuestra experiencia y transforma tu carrera con conocimientos que te
-                        abrirán nuevas puertas. ¡Inscríbete hoy!</p>
+                    <div>
+                        <p class="p-razon1">Somos un equipo de desarrolladores expertos en desarrollo web. Nuestro
+                            programa completo
+                            te
+                            enseñarán habilidades prácticas y
+                            demandadas
+                            en esta área. Aprovecha nuestra experiencia y transforma tu carrera con conocimientos
+                            que te
+                            abrirán nuevas puertas. ¡Inscríbete hoy!</p>
+                    </div>
                 </div>
-                <div>
+                <div class="div-razones2">
                     <img src="asset/icon/clock.png" alt="Icono de multiples personas">
-                    <p>Con más de 15 años de experiencia combinada, nuestro equipo de tres desarrolladores web expertos
-                        está listo para ayudarte a transformar tu carrera. Aprovecha nuestro profundo conocimiento para
-                        adquirir las habilidades más demandadas en el mercado. ¡Empieza hoy y da el primer paso hacia el
-                        éxito!</p>
+                    <div>
+                        <p class="p-razon1">Con más de 15 años de experiencia combinada, nuestro equipo de tres
+                            desarrolladores web
+                            expertos
+                            está listo para ayudarte a transformar tu carrera. Aprovecha nuestro profundo
+                            conocimiento
+                            para
+                            adquirir las habilidades más demandadas en el mercado. ¡Empieza hoy y da el primer paso
+                            hacia el
+                            éxito!</p>
+                    </div>
                 </div>
-                <div>
+                <div class="div-razones2">
                     <img src="asset/icon/meeting.png" alt="Icono de multiples personas">
-                    <p>Más de 200.000 alumnos han confiado en nuestro programa completo. Muchos de ellos han logrado
-                        migrar a un
-                        país con mejores oportunidades, obtener empleos más remunerados o aumentar significativamente su
-                        sueldo. ¡Únete a ellos y transforma tu vida!</p>
+                    <div>
+                        <p class="p-razon1">Más de 200.000 alumnos han confiado en nuestro programa completo. Muchos de
+                            ellos han
+                            logrado
+                            migrar a un
+                            país con mejores oportunidades, obtener empleos más remunerados o aumentar
+                            significativamente su
+                            sueldo. ¡Únete a ellos y transforma tu vida!</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -165,7 +193,7 @@
             <div class="div-titulo">
                 <header>
                     <h2>Mas Razones?</h2>
-                    <p>Necesitas más razones para elegir PyNexus Academy?</p>
+                    <p class="p-razones">Necesitas más razones para elegir PyNexus Academy?</p>
                 </header>
             </div>
             <div>
@@ -183,37 +211,64 @@
             </div>
         </section>
 
-        <aside>
-            <div class="rating-system" id="rating-system">
-                <h2 class="valorado">Valorado 4,9/5 por más de 10,000 usuarios</h2>
-                <h2>Valora esta página:</h2>
-                <div class="stars">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
-                </div>
-                <p id="rating-value">Valoración: 0 estrellas</p>
-            </div>
-        </aside>
     </main>
 
     <footer>
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
-        </div>
-        <div>
             <a class="buttonf" href="index.html">Inicio</a>
             <a class="buttonf" href="cursos.html">Todos los cursos</a>
             <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
+        </div>
+        <div>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
         </div>
     </footer>
 
     <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
 
-    <script type="module" src="auth-check.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z",
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Verificar el estado de autenticación
+        onAuthStateChanged(auth, (user) => {
+            const navRegistrar = document.getElementById("nav-registrar");
+            const navIniciar = document.getElementById("nav-iniciar");
+
+            if (navRegistrar) {
+                if (user) {
+                    // Usuario está autenticado, ocultar el elemento
+                    navRegistrar.style.display = "none";
+                    navIniciar.style.display = "block";
+
+                } else {
+                    // Usuario no está autenticado, mostrar el elemento
+                    navRegistrar.style.display = "block";
+                }
+            }
+        });
+
+    </script>
     <script src="js/script.js"></script>
 </body>
 

@@ -84,55 +84,56 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
     <header class="header" id="header">
-        <a href="../index.html">
+        <a href="index.html">
             <h2>PyNexus Academy</h2>
         </a>
         <nav id="nav-registrar">
             <ul>
-                <li><a class="button" href="../cursos.html">Cursos</a></li>
-                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
-                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
         </nav>
 
         <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class=" button" href="../cursos.html">Cursos</a></li>
-                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
-                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
+                <li><a class=" button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
             <div class="div-close" id="div-close">
-                <img src="../asset/img/menu.png" alt="">
+                <img src="asset/img/menu.png" alt="">
             </div>
         </nav>
 
         <div class="div-menu" id="div-menu">
-            <img src="../asset/img/menu.png" alt="" class="menu">
+            <img src="asset/img/menu.png" alt="" class="menu">
         </div>
     </header>
 
-    <main>
+    <main style="padding: 50px;">
 
-        <section class="sec1">
-            <div>
-                <h2>Ultimate Linux</h2>
-                <p>Linux es un sistema operativo robusto y flexible, perfecto para desarrolladores y administradores de
-                    sistemas. Ofrece un entorno seguro, estable y personalizable, ideal para servidores, programación y
-                    desarrollo. Con Linux, tienes el control total sobre tu sistema, optimizando rendimiento y
-                    productividad.</p>
-            </div>
-        </section>
-        <hr class="hr">
-        <!-- Segunda sección -->
-        <section class="sec2">
-            <a href="https://www.um.es/docencia/barzana/DAWEB/Lenguaje-de-programacion-JavaScript-1.pdf"
-                class="btn">Descargar PDF</a>
+        <section style="display: flex; flex-direction: column;gap: 25px;">
+            <a href="productos/css.html">boton</a>
+            <a href="productos/docker.html">boton</a>
+            <a href="productos/express.html">boton</a>
+            <a href="productos/git y github.html">boton</a>
+            <a href="productos/html.html">boton</a>
+            <a href="productos/javascript.html">boton</a>
+            <a href="productos/linux.html">boton</a>
+            <a href="productos/mongodb.html">boton</a>
+            <a href="productos/nodejs.html">boton</a>
+            <a href="productos/python.html">boton</a>
+            <a href="productos/react.html">boton</a>
+            <a href="productos/seguridad.html">boton</a>
+            <a href="productos/sql.html">boton</a>
+            <a href="productos/typescripts.html">boton</a>
         </section>
 
     </main>
@@ -149,48 +150,7 @@
         </div>
     </footer>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import {
-            getAuth,
-            onAuthStateChanged,
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-
-        // Configuración de Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
-            authDomain: "pynexus-academy-99588.firebaseapp.com",
-            projectId: "pynexus-academy-99588",
-            storageBucket: "pynexus-academy-99588.appspot.com",
-            messagingSenderId: "155439680494",
-            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
-            measurementId: "G-K6936E5G9Z",
-        };
-
-        // Inicializar Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        // Verificar el estado de autenticación
-        onAuthStateChanged(auth, (user) => {
-            const navRegistrar = document.getElementById("nav-registrar");
-            const  navIniciar = document.getElementById("nav-iniciar");
-
-            if (navRegistrar) {
-                if (user) {
-                    // Usuario está autenticado, ocultar el elemento
-                    navRegistrar.style.display = "none";
-                    navIniciar.style.display = "block";
-
-                } else {
-                    // Usuario no está autenticado, mostrar el elemento
-                    navRegistrar.style.display = "block";
-                }
-            }
-        });
-
-    </script>
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

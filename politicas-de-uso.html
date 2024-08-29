@@ -101,12 +101,20 @@
             </ul>
         </nav>
 
-        <!-- <nav id="nav-iniciar">
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href="" class="button">Perfil</a></li>
+                <li><a class=" button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
 
     <main>
@@ -215,14 +223,56 @@
 
     <footer>
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
-        </div>
-        <div>
             <a class="buttonf" href="index.html">Inicio</a>
             <a class="buttonf" href="cursos.html">Todos los cursos</a>
             <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
         </div>
+        <div>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
+        </div>
     </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z",
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Verificar el estado de autenticación
+        onAuthStateChanged(auth, (user) => {
+            const navRegistrar = document.getElementById("nav-registrar");
+            const  navIniciar = document.getElementById("nav-iniciar");
+
+            if (navRegistrar) {
+                if (user) {
+                    // Usuario está autenticado, ocultar el elemento
+                    navRegistrar.style.display = "none";
+                    navIniciar.style.display = "block";
+
+                } else {
+                    // Usuario no está autenticado, mostrar el elemento
+                    navRegistrar.style.display = "block";
+                }
+            }
+        });
+
+    </script>
 
     <script src="js/script.js"></script>
 </body>

@@ -77,7 +77,7 @@
     <link rel="preload" href="https://www.tusitio.com/scripts.js" as="script">
 
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/registrarse.css">
+    <link rel="stylesheet" href="../css/productos.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,36 +90,106 @@
 
 <body>
     <header class="header" id="header">
-        <a href="index.html">
+        <a href="../index.html">
             <h2>PyNexus Academy</h2>
         </a>
         <nav id="nav-registrar">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a class="button" href="registrarse.html">Registrarse</a></li>
-                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
+                <li><a class="button" href="../cursos.html">Cursos</a></li>
+                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
         </nav>
 
-        <!-- <nav id="nav-iniciar">
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href="" class="button">Perfil</a></li>
+                <li><a class=" button" href="../cursos.html">Cursos</a></li>
+                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="../asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="../asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
+
+    <main>
+
+        <section class="sec1">
+            <div>
+                <h2>Ultimate Docker</h2>
+                <p>Docker permite a los desarrolladores crear, probar y desplegar aplicaciones en cualquier entorno sin
+                    problemas. Con contenedores ligeros y consistentes, Docker garantiza que tu software funcione
+                    perfectamente, sin importar dónde se ejecute. ¡Optimiza tu flujo de trabajo y asegura compatibilidad
+                    con Docker!.</p>
+            </div>
+        </section>
+        <hr class="hr">
+        <!-- Segunda sección -->
+        <section class="sec2">
+            <a href="https://www.um.es/docencia/barzana/DAWEB/Lenguaje-de-programacion-JavaScript-1.pdf"
+                class="btn">Descargar PDF</a>
+        </section>
+
+    </main>
+
 
     <footer>
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
+            <a class="buttonf" href="../index.html">Inicio</a>
+            <a class="buttonf" href="../cursos.html">Todos los cursos</a>
+            <a class="buttonf" href="../politicas-de-uso.html">Políticas de uso</a>
         </div>
         <div>
-            <a class="buttonf" href="index.html">Inicio</a>
-            <a class="buttonf" href="cursos.html">Todos los cursos</a>
-            <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
         </div>
     </footer>
 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z",
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Verificar el estado de autenticación
+        onAuthStateChanged(auth, (user) => {
+            const navRegistrar = document.getElementById("nav-registrar");
+            const  navIniciar = document.getElementById("nav-iniciar");
+
+            if (navRegistrar) {
+                if (user) {
+                    // Usuario está autenticado, ocultar el elemento
+                    navRegistrar.style.display = "none";
+                    navIniciar.style.display = "block";
+
+                } else {
+                    // Usuario no está autenticado, mostrar el elemento
+                    navRegistrar.style.display = "block";
+                }
+            }
+        });
+
+    </script>
     <script src="../js/script.js"></script>
 </body>
 

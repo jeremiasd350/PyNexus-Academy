@@ -48,6 +48,90 @@ nav ul li {
     list-style: none;
 }
 
+.div-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.menu {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+}
+
+.nav-responsive {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: red;
+    width: 100vw;
+    height: 100%;
+    z-index: 999;
+}
+
+.nav-responsive {
+    background: #0D0D1E;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.nav-responsive ul {
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+
+.div-close img {
+    width: 50px;
+    height: 50px;
+}
+
+#nav-registrar {
+    display: flex;
+}
+
+#div-menu {
+    display: none;
+}
+
+.nav-responsive {
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .header nav ul li a {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    #nav-registrar {
+        display: none;
+    }
+
+    #div-menu {
+        display: block;
+    }
+}
+
 .button {
     padding: 17px 40px;
     cursor: pointer;
@@ -129,15 +213,12 @@ main {
     align-items: center;
     gap: 25px;
     padding: 0;
-    margin-bottom: 100px;
-    margin-left: 50px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .div-h1 h1 {
     margin: 0;
-}
-
-.div-h1 h1 {
     font-size: 50px;
 }
 
@@ -150,6 +231,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px 20px 50px 20px;
 }
 
 section {
@@ -235,7 +317,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 200px;
+    min-height: 200px;
     padding: 10px;
     color: white;
     box-shadow: 1px 1px 20px -15px white;
@@ -282,4 +364,20 @@ footer div a {
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
     transition: 100ms;
+}
+
+@media screen and (max-width:1024px) {
+    footer {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 200px;
+    }
+
+    footer div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

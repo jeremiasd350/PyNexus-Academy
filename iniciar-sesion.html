@@ -101,18 +101,25 @@
             </ul>
         </nav>
 
-        <!-- <nav id="nav-iniciar">
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href="" class="button">Perfil</a></li>
+                <li><a class=" button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
 
     <main>
         <div class="form-container">
-            <h2>
-                ¡Te damos la Bienvenida!</h2>
+            <h2>Iniciar sesión</h2>
             <form id="iniciar-sesionForm" action="#" method="get">
                 <input type="email" name="email" placeholder="Correo Electrónico" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
@@ -124,18 +131,19 @@
 
     <footer>
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
-        </div>
-        <div>
             <a class="buttonf" href="index.html">Inicio</a>
             <a class="buttonf" href="cursos.html">Todos los cursos</a>
             <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
+        </div>
+        <div>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
         </div>
     </footer>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
 
         // Configuración de Firebase
         const firebaseConfig = {
@@ -175,16 +183,13 @@
         // Comprobar si el usuario ya ha iniciado sesión
         window.addEventListener('load', () => {
             const user = localStorage.getItem('user');
-            if (user) {
-                alert('Ya estás logueado como ' + user);
-                window.location.href = 'index.html'; // Redirigir a una página principal si el usuario ya está logueado
 
-                // const nav = document.getElementById("nav-registrar");
+            alert('Ya estás logueado como ' + user);
+            window.location.href = 'index.html'; // Redirigir a una página principal si el usuario ya está logueado
 
-                // nav.style.display = "none";
-            }
         });
     </script>
+
     <script src="js/script.js"></script>
 </body>
 

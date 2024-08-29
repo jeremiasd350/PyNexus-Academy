@@ -85,15 +85,15 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-
+    <script src="js/responsive.js"></script>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <a href="index.html">
             <h2>PyNexus Academy</h2>
         </a>
-        <nav>
+        <nav id="nav-registrar">
             <ul>
                 <li><a class="button" href="cursos.html">Cursos</a></li>
                 <li><a class="button" href="registrarse.html">Registrarse</a></li>
@@ -101,106 +101,122 @@
             </ul>
         </nav>
 
-        <!-- <nav>
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href=""></a></li>
+                <li><a class=" button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
 
     <main>
         <div class="div-h1">
             <h1>Productos</h1>
             <div>
-                <button class="btn">
+                <a href="inscribete.html" class="btn">
                     INSCRÍBETE AQUÍ
-                </button>
+                </a>
             </div>
         </div>
 
         <section>
             <article>
-                <a href="#">
-                    <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
+                <a href="#" id="html">
+                    <div>
+                        <img src="asset/img/" alt="">
+                    </div>
                     <div class="div-info-prod">
                         <div>
                             <h3>HTML5: sin fronteras</h3>
-                            <p>Quieres empezar a introducirte al mundo del desarrollo y no sabes dónde empezar? Estás
-                                cansado de cursos ridículamente largos...</p>
+                            <p>HTML es la columna vertebral de cualquier sitio web. Define la estructura y el contenido
+                                de tu página, permitiendo que todo, desde...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="html-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="css">
                     <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>CSS3: sin fronteras</h3>
-                            <p>El único curso que necesitarás de CSS, acá profundizarás hasta el último detalle y podrás construir hermosos sitios web. Basta ya de...</p>
+                            <p>CSS es la clave para crear sitios web atractivos y responsivos. Con él, puedes
+                                personalizar el diseño, colores y tipografías de tu...
+                            </p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="css-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="productos/css.html">
+                <a href="#" id="javascript">
                     <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate JavaScript</h3>
-                            <p>JavaScript es uno de los lenguajes más populares en la actualidad y es utilizado por miles de empresas. Si quieres construir...</p>
+                            <p>JavaScript es el lenguaje de programación que da vida a tus sitios web. Con él, puedes
+                                crear experiencias interactivas y dinámicas...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="javascript-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="react">
                     <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate React</h3>
-                            <p>React es la biblioteca para frontend más utilizada en la actualidad. Si deseas trabajar como desarrollador frontend o incluso...</p>
+                            <p>React es una biblioteca de JavaScript para construir interfaces de usuario interactivas y
+                                eficientes. Su enfoque en componentes reutilizables y...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="react-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="gitygithub">
                     <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate GIT + GITHUB</h3>
-                            <p>Un curso donde se cubre la teoría y la práctica, con lecciones pequeñas, fáciles de seguir y de entender. Acá no hay videos...</p>
+                            <p>Git y GitHub son esenciales para cualquier desarrollador. Git te permite gestionar
+                                versiones de tu código de manera segura, mientras que...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="gitygithub-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="typescript">
                     <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>TypeScript: sin fronteras</h3>
-                            <p>Si eres un desarrollador JavaScript y quieres mejorar tus habilidades para obtener un mejor trabajo, tienes que tener a TypeScript...</p>
+                            <p>TypeScript es un superset de JavaScript que añade tipado estático, lo que ayuda a
+                                detectar errores antes de la ejecución. Su capacidad...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="typescript-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
@@ -210,7 +226,9 @@
     <div class="div-slider">
         <nav>
             <ul>
-                <li><a id="slider-a"><</a></li>
+                <li><a id="slider-a">
+                        < </a>
+                </li>
                 <li><a id="slider-1" href="cursos.html">1</a></li>
                 <li><a id="slider-2" href="slider/slider2.html">2</a></li>
                 <li><a id="slider-3" href="slider/slider3.html">3</a></li>
@@ -221,14 +239,57 @@
 
     <footer id="footer">
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
-        </div>
-        <div>
             <a class="buttonf" href="index.html">Inicio</a>
             <a class="buttonf" href="cursos.html">Todos los cursos</a>
             <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
         </div>
+        <div>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
+        </div>
     </footer>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z",
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Verificar el estado de autenticación
+        onAuthStateChanged(auth, (user) => {
+            const navRegistrar = document.getElementById("nav-registrar");
+            const  navIniciar = document.getElementById("nav-iniciar");
+
+            if (navRegistrar) {
+                if (user) {
+                    // Usuario está autenticado, ocultar el elemento
+                    navRegistrar.style.display = "none";
+                    navIniciar.style.display = "block";
+
+                } else {
+                    // Usuario no está autenticado, mostrar el elemento
+                    navRegistrar.style.display = "block";
+                }
+            }
+        });
+
+    </script>
 
     <script src="js/script.js"></script>
 </body>

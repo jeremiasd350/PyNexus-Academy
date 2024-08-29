@@ -89,11 +89,11 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <a href="../index.html">
             <h2>PyNexus Academy</h2>
         </a>
-        <nav>
+        <nav id="nav-registrar">
             <ul>
                 <li><a class="button" href="../cursos.html">Cursos</a></li>
                 <li><a class="button" href="../registrarse.html">Registrarse</a></li>
@@ -101,106 +101,119 @@
             </ul>
         </nav>
 
-        <!-- <nav>
+        <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
-                <li><a href=""></a></li>
+                <li><a class=" button" href="../cursos.html">Cursos</a></li>
+                <li><a class="button" href="../registrarse.html">Registrarse</a></li>
+                <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
-        </nav> -->
+            <div class="div-close" id="div-close">
+                <img src="../asset/img/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="div-menu" id="div-menu">
+            <img src="../asset/img/menu.png" alt="" class="menu">
+        </div>
     </header>
 
     <main>
         <div class="div-h1">
             <h1>Productos</h1>
             <div>
-                <button class="btn">
+                <a href="../inscribete.html" class="btn">
                     INSCRÍBETE AQUÍ
-                </button>
+                </a>
             </div>
         </div>
 
         <section>
             <article>
-                <a href="#">
+                <a href="#" id="nodejs">
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>NodeJS: sin fronteras</h3>
-                            <p>Si eres un desarrollador JavaScript y quieres mejorar tus oportunidades laborales,
-                                aprender Node.js es fundamental. Con Node.js, puedes construir...</p>
+                            <p>Node.js es un entorno de ejecución que permite utilizar JavaScript en el servidor,
+                                brindando un rendimiento rápido y eficiente. Ideal para...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="nodejs-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="express">
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Express: sin fronteras</h3>
-                            <p>Si eres un desarrollador JavaScript y quieres mejorar tus oportunidades laborales, aprender Express es fundamental. Con Express, puedes...</p>
+                            <p>Express.js es un framework minimalista y flexible para Node.js, ideal para crear
+                                aplicaciones web rápidas y escalables. Con su...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="express-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="python">
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate Python</h3>
-                            <p>Python es el lenguaje más popular en la actualidad y utilizado por las más grandes empresas en todo el mundo! Si quieres...</p>
+                            <p>Python es un lenguaje de programación versátil y fácil de aprender, ideal para
+                                desarrollar desde aplicaciones web hasta...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="python-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="mongodb">
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>MongoDB: sin fronteras</h3>
-                            <p>Si eres un desarrollador JavaScript y quieres mejorar tus oportunidades laborales, aprender MongoDB es fundamental. Con MongoDB, puedes...</p>
+                            <p>MongoDB es una base de datos NoSQL flexible y escalable, ideal para manejar grandes
+                                volúmenes de datos. Su estructura basada en...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="mongodb-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="docker">
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate Docker</h3>
-                            <p>Todo lo que necesitas para dominar Docker en un claro, conciso y práctico curso. Desde los fundamentos y su arquitectura hasta...</p>
+                            <p>Docker permite a los desarrolladores crear, probar y desplegar aplicaciones en cualquier
+                                entorno sin problemas. Con contenedores ligeros y...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="docker-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
             </article>
             <article>
-                <a href="#">
+                <a href="#" id="sql">
                     <img src="../asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>SQL: Sin Fronteras</h3>
-                            <p>Las bases de datos se encuentran en todos lados! Desde Facebook, Amazon o Google hasta las empresas pequeñas. Todas...</p>
+                            <p>SQL es el lenguaje fundamental para gestionar y consultar bases de datos relacionales.
+                                Con SQL, puedes realizar...</p>
                         </div>
                         <div>
-                            <h4 class="debes-inscribirte">DEBES INSCRIBIRTE</h4>
+                            <h4 class="debes-inscribirte" id="sql-debes">DEBES INSCRIBIRTE</h4>
                         </div>
                     </div>
                 </a>
@@ -210,7 +223,8 @@
     <div class="div-slider">
         <nav>
             <ul>
-                <li><a id="slider-a" href="../cursos.html"><</a>
+                <li><a id="slider-a" href="../cursos.html">
+                        < </a>
                 </li>
                 <li><a id="slider-1" href="../cursos.html">1</a></li>
                 <li><a id="slider-2" href="../slider/slider2.html">2</a></li>
@@ -222,16 +236,58 @@
 
     <footer id="footer">
         <div>
-            <p>&copy; Copyright PyNexus Academy 2024</p>
-        </div>
-        <div>
             <a class="buttonf" href="../index.html">Inicio</a>
             <a class="buttonf" href="../cursos.html">Todos los cursos</a>
             <a class="buttonf" href="../politicas-de-uso.html">Políticas de uso</a>
         </div>
+        <div>
+            <p>&copy; Copyright PyNexus Academy 2024</p>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z",
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Verificar el estado de autenticación
+        onAuthStateChanged(auth, (user) => {
+            const navRegistrar = document.getElementById("nav-registrar");
+            const  navIniciar = document.getElementById("nav-iniciar");
+
+            if (navRegistrar) {
+                if (user) {
+                    // Usuario está autenticado, ocultar el elemento
+                    navRegistrar.style.display = "none";
+                    navIniciar.style.display = "block";
+
+                } else {
+                    // Usuario no está autenticado, mostrar el elemento
+                    navRegistrar.style.display = "block";
+                }
+            }
+        });
+
+    </script>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
