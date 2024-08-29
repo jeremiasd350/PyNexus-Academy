@@ -191,10 +191,7 @@ main {
 .form-container h2 {
     margin-bottom: 40px; /* Aumenta el espacio inferior */
     text-align: center;
-    color: #5d18dc;
-    color: green;
-    color: yellow;
-    color: aqua;
+    color: #a171fa;
     font-size: 28px; /* Aumenta el tamaño de la fuente */
 }
 
