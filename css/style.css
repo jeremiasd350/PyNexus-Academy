@@ -112,6 +112,7 @@ nav ul li {
 
 #nav-registrar {
     display: flex;
+    display: none !important;
 }
 
 #div-menu {
