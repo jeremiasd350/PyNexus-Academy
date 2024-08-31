@@ -103,7 +103,7 @@
             </ul>
         </nav>
 
-        <nav class="nav-responsive" id="nav-responsive">
+        <!-- <nav class="nav-responsive" id="nav-responsive">
             <ul>
                 <li><a class=" button" href="cursos.html">Cursos</a></li>
                 <li><a class="button" href="registrarse.html">Registrarse</a></li>
@@ -112,13 +112,22 @@
             <div class="div-close" id="div-close">
                 <img src="asset/img/close.png" alt="">
             </div>
-        </nav>
+        </nav> -->
 
         <nav class="nav-registrardo" id="nav-registrardo">
             <ul>
                 <li><a class="button" href="cursos.html">Cursos</a></li>
                 <li><a class="button" href="perfil.html">Perfil</a></li>
             </ul>
+        </nav>
+        <nav class="nav-responsive-out" id="nav-responsive-out">
+            <ul>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="perfil.html">Perfil</a></li>
+            </ul>
+            <div class="div-close" id="div-close">
+                <img src="asset/img/close.png" alt="">
+            </div>
         </nav>
 
         <div class="div-menu" id="div-menu">
@@ -168,7 +177,7 @@
                 <div class="div-razones2">
                     <img src="asset/icon/clock.png" alt="Icono de multiples personas">
                     <div>
-                        <p class="p-razon1">Con más de 15 años de experiencia combinada, nuestro equipo de tres
+                        <p class="p-razon1">Con más de 15 años de experiencia combinada, nuestro equipo de
                             desarrolladores web
                             expertos
                             está listo para ayudarte a transformar tu carrera. Aprovecha nuestro profundo
@@ -260,7 +269,7 @@
         // Verificar el estado de autenticación
         onAuthStateChanged(auth, (user) => {
             const navRegistrar = document.getElementById("nav-registrar");
-            const navIniciar = document.getElementById("nav-iniciar");
+            const navIniciar = document.getElementById("nav-registrardo");
 
             if (navRegistrar) {
                 if (user) {
@@ -271,6 +280,7 @@
                 } else {
                     // Usuario no está autenticado, mostrar el elemento
                     navRegistrar.style.display = "block";
+                    navIniciar.style.display = "none";
                 }
             }
         });

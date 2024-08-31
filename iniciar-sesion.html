@@ -112,15 +112,25 @@
             </div>
         </nav>
 
+        <nav class="nav-registrardo" id="nav-registrardo">
+            <ul>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+
         <div class="div-menu" id="div-menu">
             <img src="asset/img/menu.png" alt="" class="menu">
         </div>
     </header>
 
+    <div id="notification-container" class="notification-container"></div>
+
+
     <main>
         <div class="form-container">
             <h2>Iniciar sesión</h2>
-            <form id="iniciar-sesionForm" action="#" method="get">
+            <form id="iniciar-sesionForm" action="" method="get">
                 <input type="email" name="email" placeholder="Correo Electrónico" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
                 <button type="submit" id="iniciar-sesion">Iniciar sesión</button>
@@ -140,7 +150,7 @@
         </div>
     </footer>
 
-    <script type="module">
+    <!-- <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
@@ -159,6 +169,8 @@
         // Inicializar Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+
+
 
         // Manejar el inicio de sesión
         document.getElementById('iniciar-sesionForm')?.addEventListener('submit', async (e) => {
@@ -180,15 +192,251 @@
             }
         });
 
-        // Comprobar si el usuario ya ha iniciado sesión
-        window.addEventListener('load', () => {
-            const user = localStorage.getItem('user');
+    </script> -->
 
-            alert('Ya estás logueado como ' + user);
-            window.location.href = 'index.html'; // Redirigir a una página principal si el usuario ya está logueado
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Función para mostrar notificaciones
+        function showNotification(message, type) {
+            const container = document.getElementById('notification-container');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerText = message;
+
+            container.appendChild(notification);
+            notification.style.display = 'block';
+
+            // Desaparecer la notificación después de 3 segundos
+            setTimeout(() => {
+                notification.style.display = 'none';
+                container.removeChild(notification);
+            }, 3000);
+        }
+
+        // Manejar el inicio de sesión
+        document.getElementById('iniciar-sesionForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Mostrar notificación de éxito
+                showNotification('Inicio de sesión exitoso.', 'success');
+                // window.location.href = 'index.html'; // Redirigir a una página principal después de iniciar sesión
+            } catch (error) {
+                // Mostrar notificación de error
+                let errorMessage;
+                switch (error.code) {
+                    case 'auth/user-not-found':
+                        errorMessage = 'Usuario no encontrado.';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Contraseña incorrecta.';
+                        break;
+                    default:
+                        errorMessage = 'Error al iniciar sesión: ' + error.message;
+                        break;
+                }
+                showNotification(errorMessage, 'error');
+            }
+        });
+    </script> -->
+
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+    
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z"
+        };
+    
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        // Función para mostrar notificaciones
+        function showNotification(message, type) {
+            const container = document.getElementById('notification-container');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerText = message;
+    
+            container.appendChild(notification);
+            notification.style.display = 'block';
+    
+            // Desaparecer la notificación después de 3 segundos
+            setTimeout(() => {
+                notification.style.display = 'none';
+                container.removeChild(notification);
+            }, 3000);
+        }
+    
+        // Manejar el inicio de sesión
+        document.getElementById('iniciar-sesionForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+    
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+    
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+    
+                // Mostrar notificación de éxito
+                showNotification('Inicio de sesión exitoso. Redirigiendo...', 'success');
+                
+                // Redirigir después de un breve retraso
+                setTimeout(() => {
+                    window.location.href = 'index.html'; // Redirigir a una página principal después de iniciar sesión
+                }, 3000);
+            } catch (error) {
+                // Manejar errores específicos
+                let errorMessage;
+                switch (error.code) {
+                    case 'auth/user-not-found':
+                        errorMessage = 'No se encontró una cuenta con este correo electrónico.';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Contraseña incorrecta. Por favor, inténtalo de nuevo.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'El formato del correo electrónico no es válido.';
+                        break;
+                    case 'auth/too-many-requests':
+                        errorMessage = 'Demasiados intentos fallidos. Por favor, inténtalo más tarde.';
+                        break;
+                    default:
+                        errorMessage = 'Error al iniciar sesión: ' + error.message;
+                        break;
+                }
+                showNotification(errorMessage, 'error');
+            }
+        });
+    </script> -->
+    
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+    
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z"
+        };
+    
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        // Función para mostrar notificaciones
+        function showNotification(message, type) {
+            const container = document.getElementById('notification-container');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerText = message;
+    
+            container.appendChild(notification);
+            notification.style.display = 'block';
+    
+            // Desaparecer la notificación después de 3 segundos
+            setTimeout(() => {
+                notification.style.display = 'none';
+                container.removeChild(notification);
+            }, 3000);
+        }
+    
+        // Manejar el inicio de sesión
+        document.getElementById('iniciar-sesionForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+    
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+    
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+    
+                // Guardar el email del usuario en localStorage
+                localStorage.setItem('userEmail', user.email);
+    
+                // Mostrar notificación de éxito
+                showNotification('Inicio de sesión exitoso. Redirigiendo...', 'success');
+                
+                // Redirigir después de un breve retraso
+                setTimeout(() => {
+                    window.location.href = 'index.html'; // Redirigir a una página principal después de iniciar sesión
+                }, 3000);
+            } catch (error) {
+                // Manejar errores específicos
+                let errorMessage;
+                switch (error.code) {
+                    case 'auth/user-not-found':
+                        errorMessage = 'No se encontró una cuenta con este correo electrónico.';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Contraseña incorrecta. Por favor, inténtalo de nuevo.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'El formato del correo electrónico no es válido.';
+                        break;
+                    case 'auth/too-many-requests':
+                        errorMessage = 'Demasiados intentos fallidos. Por favor, inténtalo más tarde.';
+                        break;
+                    default:
+                        errorMessage = 'Error al iniciar sesión: ' + error.message;
+                        break;
+                }
+                showNotification(errorMessage, 'error');
+            }
+        });
+    
+        // Verificar el estado del usuario al cargar la página
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // El usuario ha iniciado sesión, puedes mostrar elementos que requieran autenticación
+                document.getElementById('nav-registrar').style.display = 'none';
+            } else {
+                // El usuario no ha iniciado sesión, puedes mostrar elementos que no requieren autenticación
+                document.getElementById('nav-registrar').style.display = 'block';
+            }
         });
     </script>
+    
+
 
     <script src="js/script.js"></script>
 </body>

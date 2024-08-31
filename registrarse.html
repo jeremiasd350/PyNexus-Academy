@@ -112,15 +112,25 @@
             </div>
         </nav>
 
+        <nav class="nav-registrardo" id="nav-registrardo">
+            <ul>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+
         <div class="div-menu" id="div-menu">
             <img src="asset/img/menu.png" alt="" class="menu">
         </div>
     </header>
 
+    <div id="notification-container" class="notification-container"></div>
+
+
     <main>
         <div class="form-container">
             <h2>Crear una nueva cuenta</h2>
-            <form id="registroForm" action="#" method="post">
+            <form id="registroForm" action="" method="post">
                 <input type="email" id="email" placeholder="Correo Electrónico" required>
                 <input type="password" id="password" placeholder="Contraseña" required>
                 <button type="submit" id="registrarse">Registrarse</button>
@@ -140,7 +150,7 @@
         </div>
     </footer>
 
-    <script type="module">
+    <!-- <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
         import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
@@ -178,14 +188,100 @@
                     createdAt: new Date()
                 });
 
-                alert('Registro exitoso. Redirigiendo a iniciar sesión...');
-                window.location.href = 'iniciar-sesion.html';
+                // alert('Registro exitoso. Redirigiendo a iniciar sesión...');
+                window.location.href = 'index.html';
 
             } catch (error) {
                 alert(error.message);
             }
         });
+
+    </script> -->
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+    
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
+            authDomain: "pynexus-academy-99588.firebaseapp.com",
+            projectId: "pynexus-academy-99588",
+            storageBucket: "pynexus-academy-99588.appspot.com",
+            messagingSenderId: "155439680494",
+            appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
+            measurementId: "G-K6936E5G9Z"
+        };
+    
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+    
+        // Función para mostrar notificaciones
+        function showNotification(message, type) {
+            const container = document.getElementById('notification-container');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerText = message;
+    
+            container.appendChild(notification);
+            notification.style.display = 'block';
+    
+            // Desaparecer la notificación después de 3 segundos
+            setTimeout(() => {
+                notification.style.display = 'none';
+                container.removeChild(notification);
+            }, 3000);
+        }
+    
+        // Manejar el registro
+        document.getElementById('registroForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+    
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+    
+                // Guardar datos del usuario en Firestore
+                await setDoc(doc(db, 'users', user.uid), {
+                    email: email,
+                    createdAt: new Date()
+                });
+    
+                // Mostrar notificación de éxito
+                showNotification('Registro exitoso. Redirigiendo a inicio...', 'success');
+    
+                // Redirigir después de un breve retraso para permitir que se vea la notificación
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+            } catch (error) {
+                // Mostrar notificación de error
+                let errorMessage;
+                switch (error.code) {
+                    case 'auth/email-already-in-use':
+                        errorMessage = 'El correo electrónico ya está en uso.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'El correo electrónico no es válido.';
+                        break;
+                    case 'auth/weak-password':
+                        errorMessage = 'La contraseña es demasiado débil.';
+                        break;
+                    default:
+                        errorMessage = 'Error al registrarse: ' + error.message;
+                        break;
+                }
+                showNotification(errorMessage, 'error');
+            }
+        });
     </script>
+    
     <script src="js/script.js"></script>
 </body>
 

@@ -171,7 +171,7 @@
         // Verificar el estado de autenticación
         onAuthStateChanged(auth, (user) => {
             const navRegistrar = document.getElementById("nav-registrar");
-            const  navIniciar = document.getElementById("nav-iniciar");
+            const navIniciar = document.getElementById("nav-registrardo");
 
             if (navRegistrar) {
                 if (user) {
@@ -182,6 +182,7 @@
                 } else {
                     // Usuario no está autenticado, mostrar el elemento
                     navRegistrar.style.display = "block";
+                    navIniciar.style.display = "none";
                 }
             }
         });
