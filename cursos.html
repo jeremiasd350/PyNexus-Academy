@@ -108,7 +108,7 @@
                 <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
             <div class="div-close" id="div-close">
-                <img src="asset/img/close.png" alt="">
+                <img src="asset/img/close.png" alt="" id="menu">
             </div>
         </nav>
 
@@ -117,6 +117,16 @@
                 <li><a class="button" href="cursos.html">Cursos</a></li>
                 <li><a class="button" href="perfil.html">Perfil</a></li>
             </ul>
+        </nav>
+
+        <nav class="nav-responsive-out" id="nav-responsive-out">
+            <ul>
+                <li><a class="button" href="perfil.html">Perfil</a></li>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+            </ul>
+            <div class="div-close" id="div-close">
+                <img src="asset/img/close.png" alt="" id="close">
+            </div>
         </nav>
 
         <div class="div-menu" id="div-menu">
@@ -136,9 +146,9 @@
 
         <section>
             <article>
-                <a href="#" id="html">
+                <a href="productos/html.html" id="html">
                     <div>
-                        <img src="asset/img/" alt="">
+                        <img src="asset/img/HTML.png" alt="">
                     </div>
                     <div class="div-info-prod">
                         <div>
@@ -153,8 +163,8 @@
                 </a>
             </article>
             <article>
-                <a href="#" id="css">
-                    <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
+                <a href="productos/css.html" id="css">
+                    <img src="asset/img/css.png" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>CSS3: sin fronteras</h3>
@@ -169,8 +179,8 @@
                 </a>
             </article>
             <article>
-                <a href="#" id="javascript">
-                    <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
+                <a href="productos/javascript.html" id="javascript">
+                    <img src="asset/img/javascript.png" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate JavaScript</h3>
@@ -184,8 +194,8 @@
                 </a>
             </article>
             <article>
-                <a href="#" id="react">
-                    <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
+                <a href="productos/react.html" id="react">
+                    <img src="asset/img/react.png" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate React</h3>
@@ -199,8 +209,8 @@
                 </a>
             </article>
             <article>
-                <a href="#" id="gitygithub">
-                    <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
+                <a href="productos/git y github.html" id="gitygithub">
+                    <img src="asset/img/gitygithub.png" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate GIT + GITHUB</h3>
@@ -214,8 +224,8 @@
                 </a>
             </article>
             <article>
-                <a href="#" id="typescript">
-                    <img src="asset/img/nj7EJz7TXGAd67OWQkKy_ultimate react academia.jpg" alt="">
+                <a href="productos/typescripts.html" id="typescript">
+                    <img src="asset/img/typescript.png" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>TypeScript: sin fronteras</h3>
@@ -294,6 +304,54 @@
                     navRegistrar.style.display = "block";
                     navIniciar.style.display = "none";
                 }
+            }
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            const navResponsive = document.getElementById("nav-responsive");
+            const navResponsiveOut = document.getElementById("nav-responsive-out");
+            const close = document.getElementById("close");
+            const divMenu = document.getElementById("div-menu");
+            const menu = document.getElementById("menu");
+
+            // registrardo.style.display = "none";
+            // navResponsiveOut.style.display = "none";
+
+            if (user) {
+                // Usuario autenticado, mostrar navResponsiveOut y ocultar navResponsive
+                navResponsive.style.display = "none";
+                navResponsiveOut.style.display = "none";
+
+                divMenu.addEventListener("click", function () {
+                    if (navResponsiveOut.style.display === "none") {
+                        navResponsiveOut.style.display = "flex";
+                    } else {
+                        navResponsiveOut.style.display = "none";
+                    }
+                });
+
+                close.addEventListener("click", function () {
+                    // Solo afecta a navResponsiveOut
+                    navResponsiveOut.style.display = "none";
+                });
+
+            } else {
+                // Usuario no autenticado, mostrar navResponsive y ocultar navResponsiveOut
+                navResponsive.style.display = "none";
+                navResponsiveOut.style.display = "none";
+
+                divMenu.addEventListener("click", function () {
+                    if (navResponsive.style.display === "none") {
+                        navResponsive.style.display = "flex";
+                    } else {
+                        navResponsive.style.display = "none";
+                    }
+                });
+
+                menu.addEventListener("click", function () {
+                    // Solo afecta a navResponsive
+                    navResponsive.style.display = "none";
+                });
             }
         });
 

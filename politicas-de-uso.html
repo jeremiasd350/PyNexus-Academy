@@ -108,7 +108,7 @@
                 <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
             <div class="div-close" id="div-close">
-                <img src="asset/img/close.png" alt="">
+                <img src="asset/img/close.png" alt="" id="menu">
             </div>
         </nav>
 
@@ -117,6 +117,16 @@
                 <li><a class="button" href="cursos.html">Cursos</a></li>
                 <li><a class="button" href="perfil.html">Perfil</a></li>
             </ul>
+        </nav>
+
+        <nav class="nav-responsive-out" id="nav-responsive-out">
+            <ul>
+                <li><a class="button" href="perfil.html">Perfil</a></li>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+            </ul>
+            <div class="div-close" id="div-close">
+                <img src="asset/img/close.png" alt="" id="close">
+            </div>
         </nav>
 
         <div class="div-menu" id="div-menu">
@@ -180,7 +190,22 @@
             </section>
 
             <section>
-                <h2>5. Revisiones</h2>
+                <h2>5. Acuerdo de Arbitraje Obligatorio</h2>
+                <p>Cualquier disputa, controversia o reclamación que surja en relación con estos Términos de Uso, o con
+                    el uso de los servicios de PyNexus Academy, será resuelta exclusivamente mediante arbitraje
+                    vinculante, de conformidad con las leyes de la República Dominicana. Al utilizar nuestros servicios,
+                    aceptas que no iniciarás acciones legales en tribunales ordinarios.</p>
+            </section>
+
+            <section>
+                <h2>6. Renuncia a Demandas Colectivas</h2>
+                <p>El usuario acepta que cualquier disputa será resuelta de forma individual y no como parte de una
+                    acción colectiva o de grupo. Al utilizar los servicios de PyNexus Academy, renuncias expresamente a
+                    cualquier derecho a participar en una demanda colectiva o representativa.</p>
+            </section>
+
+            <section>
+                <h2>7. Revisiones</h2>
                 <p>El material incluido dentro de la academia, tanto técnico, escrito, fotográfico o en video; podrían
                     no
                     ser
@@ -194,7 +219,21 @@
             </section>
 
             <section>
-                <h2>6. Hipervínculos (Links)</h2>
+                <h2>8. Jurisdicción Exclusiva</h2>
+                <p>Al aceptar estos Términos de Uso, reconoces que cualquier disputa será resuelta exclusivamente bajo
+                    la jurisdicción de los tribunales de la República Dominicana, renunciando a cualquier otro fuero
+                    aplicable.</p>
+            </section>
+
+            <section>
+                <h2>9. Renuncia a Reclamaciones de Daños</h2>
+                <p>El usuario acepta que PyNexus Academy no será responsable por ningún daño indirecto, incidental,
+                    especial, punitivo o consecuente que surja del uso de nuestros servicios. Esta renuncia se aplica
+                    incluso si PyNexus Academy ha sido notificada de la posibilidad de dichos daños.</p>
+            </section>
+
+            <section>
+                <h2>10. Hipervínculos (Links)</h2>
                 <p>La academia no revisa de manera constante los hipervínculos proporcionados en las lecciones. Y
                     utilizar
                     estos
@@ -202,7 +241,14 @@
             </section>
 
             <section>
-                <h2>7. Políticas de Reembolso</h2>
+                <h2>11. Limitación de Responsabilidad</h2>
+                <p>La responsabilidad total de PyNexus Academy hacia el usuario por cualquier causa de acción no
+                    excederá en ningún caso el monto total pagado por el usuario a PyNexus Academy durante los últimos
+                    12 meses por los servicios contratados.</p>
+            </section>
+
+            <section>
+                <h2>12. Políticas de Reembolso</h2>
                 <p>En PyNexus Academy, entendemos que el contenido entregado podría no ser de tu agrado o no cumplir con
                     tus expectativas. Sin embargo, no ofrecemos reembolsos bajo ninguna circunstancia. Te recomendamos
                     revisar la descripción del producto y las políticas de la academia antes de realizar una compra. Al
@@ -210,7 +256,15 @@
             </section>
 
             <section>
-                <h2>8. Leyes</h2>
+                <h2>13. Renuncia a Demandas por Inconformidad</h2>
+                <p>El usuario reconoce y acepta que el uso de los servicios de PyNexus Academy es voluntario y bajo su
+                    propio riesgo. Por lo tanto, renuncia expresamente a cualquier derecho a presentar una demanda o
+                    reclamación legal en contra de PyNexus Academy en caso de insatisfacción, inconformidad o
+                    descontento con los servicios ofrecidos, productos adquiridos o resultados obtenidos.</p>
+            </section>
+
+            <section>
+                <h2>14. Leyes</h2>
                 <p>Academia PyNexus Academy se rige bajo las leyes locales del país donde los propietarios operan. No se
                     tomarán
                     en
@@ -218,7 +272,7 @@
             </section>
 
             <section>
-                <h2>9. Modificaciones de las Políticas de Uso</h2>
+                <h2>15. Modificaciones de las Políticas de Uso</h2>
                 <p>PyNexus Academy podrá realizar modificaciones sin previo aviso a las políticas de uso. Al utilizar
                     este
                     servicio
@@ -226,6 +280,7 @@
             </section>
         </div>
     </main>
+
 
 
     <footer>
@@ -280,8 +335,56 @@
             }
         });
 
-    </script>
+        onAuthStateChanged(auth, (user) => {
+            const navResponsive = document.getElementById("nav-responsive");
+            const navResponsiveOut = document.getElementById("nav-responsive-out");
+            const close = document.getElementById("close");
+            const divMenu = document.getElementById("div-menu");
+            const menu = document.getElementById("menu");
+            const registrardo = document.getElementById("nav-registrardo");
 
+            // registrardo.style.display = "none";
+            // navResponsiveOut.style.display = "none";
+
+            if (user) {
+                // Usuario autenticado, mostrar navResponsiveOut y ocultar navResponsive
+                navResponsive.style.display = "none";
+                navResponsiveOut.style.display = "none";
+
+                divMenu.addEventListener("click", function () {
+                    if (navResponsiveOut.style.display === "none") {
+                        navResponsiveOut.style.display = "flex";
+                    } else {
+                        navResponsiveOut.style.display = "none";
+                    }
+                });
+
+                close.addEventListener("click", function () {
+                    // Solo afecta a navResponsiveOut
+                    navResponsiveOut.style.display = "none";
+                });
+
+            } else {
+                // Usuario no autenticado, mostrar navResponsive y ocultar navResponsiveOut
+                navResponsive.style.display = "none";
+                navResponsiveOut.style.display = "none";
+
+                divMenu.addEventListener("click", function () {
+                    if (navResponsive.style.display === "none") {
+                        navResponsive.style.display = "flex";
+                    } else {
+                        navResponsive.style.display = "none";
+                    }
+                });
+
+                menu.addEventListener("click", function () {
+                    // Solo afecta a navResponsive
+                    navResponsive.style.display = "none";
+                });
+            }
+        });
+
+    </script>
     <script src="js/script.js"></script>
 </body>
 

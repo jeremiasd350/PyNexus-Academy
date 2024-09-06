@@ -119,6 +119,16 @@
             </ul>
         </nav>
 
+        <nav class="nav-responsive-out" id="nav-responsive-out">
+            <ul>
+                <li><a class="button" href="perfil.html">Perfil</a></li>
+                <li><a class="button" href="cursos.html">Cursos</a></li>
+            </ul>
+            <div class="div-close" id="div-close">
+                <img src="asset/img/close.png" alt="">
+            </div>
+        </nav>
+
         <div class="div-menu" id="div-menu">
             <img src="asset/img/menu.png" alt="" class="menu">
         </div>
@@ -202,7 +212,8 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
         import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-    
+
+
         // Configuración de Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyCZomneoEIvCirHwp2KFQflRAF2OW-Krqc",
@@ -213,49 +224,49 @@
             appId: "1:155439680494:web:ade2b967b4a182a83a9cff",
             measurementId: "G-K6936E5G9Z"
         };
-    
+
         // Inicializar Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
-    
+
         // Función para mostrar notificaciones
         function showNotification(message, type) {
             const container = document.getElementById('notification-container');
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
             notification.innerText = message;
-    
+
             container.appendChild(notification);
             notification.style.display = 'block';
-    
+
             // Desaparecer la notificación después de 3 segundos
             setTimeout(() => {
                 notification.style.display = 'none';
                 container.removeChild(notification);
             }, 3000);
         }
-    
+
         // Manejar el registro
         document.getElementById('registroForm')?.addEventListener('submit', async (e) => {
             e.preventDefault();
-    
+
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-    
+
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
-    
+
                 // Guardar datos del usuario en Firestore
                 await setDoc(doc(db, 'users', user.uid), {
                     email: email,
                     createdAt: new Date()
                 });
-    
+
                 // Mostrar notificación de éxito
                 showNotification('Registro exitoso. Redirigiendo a inicio...', 'success');
-    
+
                 // Redirigir después de un breve retraso para permitir que se vea la notificación
                 setTimeout(() => {
                     window.location.href = 'index.html';
@@ -281,8 +292,8 @@
             }
         });
     </script>
-    
-    <script src="js/script.js"></script>
+
+    <script src="js/script1.js"></script>
 </body>
 
 </html>

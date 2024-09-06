@@ -103,12 +103,28 @@
 
         <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class=" button" href="../cursos.html">Cursos</a></li>
+                <li><a class="button" href="../cursos.html">Cursos</a></li>
                 <li><a class="button" href="../registrarse.html">Registrarse</a></li>
                 <li><a class="button" href="../iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
             <div class="div-close" id="div-close">
-                <img src="asset/img/close.png" alt="">
+                <img src="../asset/img/close.png" alt="" id="menu">
+            </div>
+        </nav>
+
+        <nav class="nav-registrardo" id="nav-registrardo">
+            <ul>
+                <li><a class="button" href="../cursos.html">Cursos</a></li>
+                <li><a class="button" href="../perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-responsive-out" id="nav-responsive-out">
+            <ul>
+                <li><a class="button" href="../perfil.html">Perfil</a></li>
+                <li><a class="button" href="../cursos.html">Cursos</a></li>
+            </ul>
+            <div class="div-close" id="div-close">
+                <img src="../asset/img/close.png" alt="" id="close">
             </div>
         </nav>
 
@@ -150,7 +166,11 @@
     </footer>
 
 
-   <script type="module">
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+
+
+    <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
         import {
             getAuth,
@@ -177,8 +197,12 @@
             const navRegistrar = document.getElementById("nav-registrar");
             const navIniciar = document.getElementById("nav-registrardo");
 
+            navRegistrar.style.display = "none";
+            navIniciar.style.display = "none";
+
             if (navRegistrar) {
                 if (user) {
+
                     // Usuario está autenticado, ocultar el elemento
                     navRegistrar.style.display = "none";
                     navIniciar.style.display = "block";
@@ -188,6 +212,54 @@
                     navRegistrar.style.display = "block";
                     navIniciar.style.display = "none";
                 }
+            }
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            const navResponsive = document.getElementById("nav-responsive");
+            const navResponsiveOut = document.getElementById("nav-responsive-out");
+            const close = document.getElementById("close");
+            const divMenu = document.getElementById("div-menu");
+            const menu = document.getElementById("menu");
+
+            // registrardo.style.display = "none";
+            // navResponsiveOut.style.display = "none";
+
+            if (user) {
+                // Usuario autenticado, mostrar navResponsiveOut y ocultar navResponsive
+                navResponsive.style.display = "none";
+                navResponsiveOut.style.display = "none";
+
+                divMenu.addEventListener("click", function () {
+                    if (navResponsiveOut.style.display === "none") {
+                        navResponsiveOut.style.display = "flex";
+                    } else {
+                        navResponsiveOut.style.display = "none";
+                    }
+                });
+
+                close.addEventListener("click", function () {
+                    // Solo afecta a navResponsiveOut
+                    navResponsiveOut.style.display = "none";
+                });
+
+            } else {
+                // Usuario no autenticado, mostrar navResponsive y ocultar navResponsiveOut
+                navResponsive.style.display = "none";
+                navResponsiveOut.style.display = "none";
+
+                divMenu.addEventListener("click", function () {
+                    if (navResponsive.style.display === "none") {
+                        navResponsive.style.display = "flex";
+                    } else {
+                        navResponsive.style.display = "none";
+                    }
+                });
+
+                menu.addEventListener("click", function () {
+                    // Solo afecta a navResponsive
+                    navResponsive.style.display = "none";
+                });
             }
         });
 
