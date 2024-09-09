@@ -86,6 +86,41 @@
         rel="stylesheet">
 
 
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=QCKSBUGE7QZT2"></script>
+    <script>
+        // Escucha el clic del botón "COMPRA YA!"
+        document.getElementById('btn-inscripcion').addEventListener('click', function () {
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    // Crea el pedido en PayPal
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '50.00'  // Precio de tu producto
+                            }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    // Captura el pago cuando sea aprobado
+                    return actions.order.capture().then(function (details) {
+                        alert('Compra completada con éxito por ' + details.payer.name.given_name);
+                        // Redirigir o realizar otra acción después del pago
+                        window.location.href = "cursos.html";
+                    });
+                },
+                onError: function (err) {
+                    alert('Ocurrió un error durante la compra. Inténtalo nuevamente.');
+                }
+            }).render('body'); // Este código genera el pago al hacer clic
+        });
+    </script>
+
 </head>
 
 <body>
@@ -95,7 +130,7 @@
         </a>
         <nav id="nav-registrar">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="cursos.html">PRODUCTOS</a></li>
                 <li><a class="button" href="registrarse.html">Registrarse</a></li>
                 <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
@@ -103,7 +138,7 @@
 
         <nav class="nav-responsive" id="nav-responsive">
             <ul>
-                <li><a class=" button" href="cursos.html">Cursos</a></li>
+                <li><a class=" button" href="cursos.html">PRODUCTOS</a></li>
                 <li><a class="button" href="registrarse.html">Registrarse</a></li>
                 <li><a class="button" href="iniciar-sesion.html">Iniciar sesión</a></li>
             </ul>
@@ -114,7 +149,7 @@
 
         <nav class="nav-registrardo" id="nav-registrardo">
             <ul>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="cursos.html">PRODUCTOS</a></li>
                 <li><a class="button" href="perfil.html">Perfil</a></li>
             </ul>
         </nav>
@@ -122,7 +157,7 @@
         <nav class="nav-responsive-out" id="nav-responsive-out">
             <ul>
                 <li><a class="button" href="perfil.html">Perfil</a></li>
-                <li><a class="button" href="cursos.html">Cursos</a></li>
+                <li><a class="button" href="cursos.html"> Productos</a></li>
             </ul>
             <div class="div-close" id="div-close">
                 <img src="asset/img/close.png" alt="" id="close">
@@ -135,6 +170,7 @@
     </header>
 
     <div class="div-acceso">
+
         <h2>ACCESO A TODO</h2>
         <p>Acceso a absolutamente todos los productos disponibles y los que serán lanzados!</p>
         <div class="div-btn">
@@ -144,9 +180,9 @@
                 </button>
             </div>
             <div class="div-precio">
-                <B>$18</B>
-                <p>$30</p>
-                <h3>-60% Descuento</h3>
+                <B>$50</B>
+                <p>$200</p>
+                <h3>-75% Descuento</h3>
             </div>
             <div class="countdown">
                 <div id="days"></div>
@@ -166,7 +202,7 @@
                     <h2>Acceso completo</h2>
                 </div>
                 <p>Para convertirte en el programador que siempre quisiste ser y obtener el trabajo que siempre quisiste
-                    debes aprender múltiples tecnologías, frameworks, patrones de diseño, librerías, etc.</p>
+                    debes aprender múltiples tecnologías, frameworks, librerías, etc.</p>
                 <p>Y por un pequeño monto, tendrás acceso ilimitado a todos nuestros productos existentes
                     y futuros.</p>
                 <p>Es un pago unico y listo!</p>
@@ -210,7 +246,7 @@
                         <div>
                             <h3>CSS3: sin fronteras</h3>
                             <p>CSS es la clave para crear sitios web atractivos y responsivos. Con él, puedes
-                                personalizar el diseño, colores y tipografías de tu...
+                                personalizar el diseño, colores y tipografías de tu página, asegurando...
                             </p>
                         </div>
                         <div>
@@ -380,7 +416,8 @@
                     <div class="div-info-prod">
                         <div>
                             <h3>Ultimate Linux</h3>
-                            <p>Linux es un sistema operativo robusto y flexible, perfecto para desarrolladores y administradores de sistemas. Ofrece un entorno seguro, estable y...</p>
+                            <p>Linux es un sistema operativo robusto y flexible, perfecto para desarrolladores y
+                                administradores de sistemas. Ofrece un entorno seguro, estable y...</p>
                         </div>
                         <div>
                             <h4 class="debes-inscribirte" id="linux-debes">DEBES INSCRIBIRTE</h4>
@@ -389,12 +426,13 @@
                 </a>
             </article>
             <article>
-                <a href="productos/seguridad.html" id="seguridad" >
+                <a href="productos/seguridad.html" id="seguridad">
                     <img src="asset/img/segurida.png" alt="">
                     <div class="div-info-prod">
                         <div>
                             <h3>Seguridad en Aplicaciones Web</h3>
-                            <p>La seguridad en aplicaciones web es crucial para proteger tus datos y la privacidad de tus usuarios. Implementar prácticas como...</p>
+                            <p>La seguridad en aplicaciones web es crucial para proteger tus datos y la privacidad de
+                                tus usuarios. Implementar prácticas como...</p>
                         </div>
                         <div>
                             <h4 class="debes-inscribirte" id="seguridad-debes">DEBES INSCRIBIRTE</h4>
@@ -408,7 +446,7 @@
     <footer>
         <div>
             <a class="buttonf" href="index.html">Inicio</a>
-            <a class="buttonf" href="cursos.html">Todos los cursos</a>
+            <a class="buttonf" href="cursos.html">Todos los Productos</a>
             <a class="buttonf" href="politicas-de-uso.html">Políticas de uso</a>
         </div>
         <div>
